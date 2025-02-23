@@ -18,5 +18,9 @@ public class RestApi {
         return "message";
 
     }
+    @RequestMapping("/uc3")
+    public String index() {
+        return "hello from Dhananjay";
+    }
 }
 
