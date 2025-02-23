@@ -8,9 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestApi {
     @GetMapping("/hello")
-    String fn(){
+    String fn() {
         return "Hello from BridgeLabz";
     }
 
-   
+    @GetMapping("/message")
+    public String message(Model model) {
+        model.addAttribute("message", "Hello World!");
+        return "message";
+
+    }
 }
+
