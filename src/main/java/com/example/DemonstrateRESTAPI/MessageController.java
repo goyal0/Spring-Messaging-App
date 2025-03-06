@@ -1,9 +1,6 @@
 package com.example.DemonstrateRESTAPI;
 
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MessageController {
@@ -17,5 +14,11 @@ public class MessageController {
     @GetMapping("/input")
     public String sayHello(@RequestParam(defaultValue = "Mark") String name) {
         return "Hello " + name + " from BridgeLabz!";
+    }
+
+    //UC3 Parameter using path variable
+    @GetMapping("/query/{name}")
+    public String display(@PathVariable String name){
+        return "Hello "+ name+ " from BridgeLabz";
     }
 }
