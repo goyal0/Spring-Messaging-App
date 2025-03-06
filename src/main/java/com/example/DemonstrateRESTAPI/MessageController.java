@@ -21,4 +21,10 @@ public class MessageController {
     public String display(@PathVariable String name){
         return "Hello "+ name+ " from BridgeLabz";
     }
+
+    // uc4 getting first and last name using post request
+    @PostMapping("/getfullname")
+    public String sayHello(@RequestBody DtUser user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
 }
