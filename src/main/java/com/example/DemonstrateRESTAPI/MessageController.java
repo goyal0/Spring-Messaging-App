@@ -27,4 +27,9 @@ public class MessageController {
     public String sayHello(@RequestBody DtUser user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+    //UC5 getting firstname as path variable and lastname as query parameter in put method
+    @PutMapping("/hello/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz!";
+    }
 }
